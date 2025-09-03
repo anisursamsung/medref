@@ -5,27 +5,31 @@
         <item>Intramuscular</item>
     </string-array>
     <string name="fast_aid_rabies">
-        \nWash the wound thoroughly under running water with soap for at least 10 minutes.
-        \nDo NOT apply any bandages.
- </string>
+    ## First Aid for Rabies \n
+    - Wash the wound thoroughly under running water with **soap** for at least *10 minutes*\n
+    - ❌ Do **NOT** apply any bandages
+    </string>
+
     <string name="other_med_rabies">
-        \nTetanus toxoid (TT) should be given.
-        \nOral or IV antibiotics, PPI and Analgesics are given if necessary.
+         ## Others \n
+        - Tetanus toxoid (TT) should be given. \n
+        - Oral or IV antibiotics, PPI and Analgesics are given if necessary.
     </string>
     <string name="vaccine_rabies">
-        \nNo ARV (Vaccine) needed if it was given within the last 3 months.
-        \nOnly 2 initial doses are required if previously immunized.
-        \nNo contraindications to ARV.
-        \nThe day of visit = Day 0.
-        \nARV should be administered within 7 days of the bite.
+        ## ARV
+        \n- **No ARV** (Vaccine) needed if it was given within the last 3 months.
+        \n- Only 2 initial doses are required if previously immunized.
+        \n- **No contraindications** to ARV.
+        \n- The day of visit = **Day 0**.
+        \n- ARV should be administered within **7 days** of the bite.
     </string>
     <string name="antibody_rabies">
-        \n\nTwo types of Immunologlobulin - ERIG (Equine Rabies Immunoglobulin) and HRIG (Human Rabies Immunoglobulin).
-        \nCommonly given is ERIG.
-        \nIndicated in cases of extensive wounds.
-        \nHRIG dosage = half the dose of ERIG.
-        \n\nDosage:
-        \nInj. Equirab 1500IU(ERIG)- Weight x 40 IU= Half SC around wound, half IM STAT.
+        ## Antibody
+        \n- Two types of Immunologlobulin - ERIG (Equine Rabies Immunoglobulin) and HRIG (Human Rabies Immunoglobulin).
+        \n- Commonly given is **ERIG**.
+        \n- Indicated in cases of extensive wounds.
+        \n- HRIG dosage = half the dose of ERIG.
+        \n- **Dosage:** Inj. Equirab 1500IU(ERIG)- **Weight x 40 IU**= Half SC around wound, half IM STAT.
     </string>
 
     <string name="RABIES_VACCINE_INFO">text</string>

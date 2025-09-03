@@ -44,8 +44,8 @@ public class SettingsActivity extends AppCompatActivity {
 
         itemAbout.setOnClickListener(v -> {
             new AlertDialog.Builder(this)
-                    .setTitle("About Us")
-                    .setMessage("MedRef App\nVersion 1.0\n\nDeveloped by Anis :)")
+                    .setTitle("Medref App")
+                    .setMessage("Version: 0.1.0-alpha\n\nDeveloped by: Dr Anisur Rahman.")
                     .setPositiveButton("OK", null)
                     .show();
         });

@@ -112,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
                 R.raw.milestones,
                 "Baby milestones"
         ));
-        referenceList.add(new ReferenceItem("NIS",ModelActivity.class,R.drawable.vaccine,true,R.drawable.aefi,R.raw.nis,"NIS"));
+        referenceList.add(new ReferenceItem("NIS",ModelActivity.class,R.drawable.vaccine,true,R.drawable.nis,R.raw.nis,"NIS"));
 //        referenceList.add(new ReferenceItem("APGAR",ModelActivity.class,R.drawable.newborn,true,R.drawable.apgar,R.raw.apgar,"APGAR Score"));
 
 

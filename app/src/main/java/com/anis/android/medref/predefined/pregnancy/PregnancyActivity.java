@@ -24,6 +24,8 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.Objects;
 
+import io.noties.markwon.Markwon;
+
 public class PregnancyActivity extends AppCompatActivity {
 
     DatePicker datePicker; // Assuming a pregnancy of 280 days
@@ -114,18 +116,22 @@ public class PregnancyActivity extends AppCompatActivity {
 
         // Final result string
         String resultString =
-                "LMP: " + lmpString + "\n\n" +
-                        "Gestational Age: " + gaString + "\n\n" +
-                        "Trimester: " + trimester + "\n\n" +
-                        "Estimated Due Date: " + eddString + "\n\n" +
-                        "Key Milestones:\n" +
-                        "- Quickening: " + quickening + "\n" +
-                        "- Anomaly Scan: " + anomalyScan + "\n" +
-                        "- Viability: " + viability + "\n" +
-                        "- Term: " + term + "\n\n" +
-                        "Clinical Note:\n" + risk;
+                "### Pregnancy Report\n\n" +
+                        "**LMP:** " + lmpString + "\n\n" +
+                        "**Gestational Age:** " + gaString + "\n\n" +
+                        "**Trimester:** " + trimester + "\n\n" +
+                        "**Estimated Due Date:** " + eddString + "\n\n" +
+                        "### Key Milestones\n" +
+                        "- **Quickening:** " + quickening + "\n" +
+                        "- **Anomaly Scan:** " + anomalyScan + "\n" +
+                        "- **Viability:** " + viability + "\n" +
+                        "- **Term:** " + term + "\n\n" +
+                        "### Clinical Note\n" +
+                        risk;
 
-        outputTv.setText(resultString);
+        Markwon markwon = Markwon.create(this);
+        markwon.setMarkdown(outputTv, resultString);
+
     }
 
     private String addWeeks(Date date, int weeks, SimpleDateFormat sdf) {
@@ -169,13 +175,13 @@ public class PregnancyActivity extends AppCompatActivity {
         safeDrug.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                launchModelActivity(R.raw.safe_drus_pregnancy,R.drawable.pregnancy_safe, "Pregnancy Safe Drugs");
+                launchModelActivity(R.raw.safe_drus_pregnancy,-1, "Pregnancy Safe Drugs");
             }
         });
          concernDrug.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                launchModelActivity(R.raw.drugs_of_concern,R.drawable.pregnancy_safe, "Pregnancy Safe Drugs");
+                launchModelActivity(R.raw.drugs_of_concern,-1, "Pregnancy Safe Drugs");
             }
         });
         calendrConv.setOnClickListener(new View.OnClickListener() {

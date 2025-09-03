@@ -19,3 +19,16 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+
+# Keep Application class
+-keep class com.anis.android.medref.MedRefApp extends android.app.Application { *; }
+
+# Keep all Activities
+-keep class com.anis.android.medref.** extends android.app.Activity
+
+# Keep entry points used in AndroidManifest
+-keepclassmembers class * {
+    @android.webkit.JavascriptInterface <methods>;
+}
+

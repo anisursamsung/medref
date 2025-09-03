@@ -22,6 +22,8 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.Objects;
 
+import io.noties.markwon.Markwon;
+
 public class RabiesActivity extends AppCompatActivity {
 
     AppCompatSpinner vaccinationTypeSpinner;
@@ -30,11 +32,14 @@ public class RabiesActivity extends AppCompatActivity {
     MaterialToolbar toolbar;
     MaterialButton fastAidBtn,antibdyBtn,otehrMedBtn,vaccineButton;
     MaterialButton generateScheduleButton;
+    private  Markwon markwon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rabies);
+        markwon = Markwon.create(this);
+
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setHomeButtonEnabled(true);
@@ -63,38 +68,36 @@ public class RabiesActivity extends AppCompatActivity {
         fastAidBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String principleText = getResources().getString(R.string.fast_aid_rabies);
-                outputTv.setText(principleText);
+                markwon.setMarkdown(outputTv, getString(R.string.fast_aid_rabies));
             }
         });
         vaccineButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String principleText = getResources().getString(R.string.vaccine_rabies);
-                outputTv.setText(principleText);
+                markwon.setMarkdown(outputTv, getString(R.string.vaccine_rabies));
+
             }
         });
         antibdyBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String principleText = getResources().getString(R.string.antibody_rabies);
-                outputTv.setText(principleText);
+                markwon.setMarkdown(outputTv, getString(R.string.antibody_rabies));
             }
         });
         otehrMedBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String principleText = getResources().getString(R.string.other_med_rabies);
-                outputTv.setText(principleText);
+                markwon.setMarkdown(outputTv, getString(R.string.other_med_rabies));
             }
         });
 
     }
 
     private void showInformation(String title, String content) {
-        // Show title + content as plain text
-        outputTv.setText(title + "\n\n" + content);
+        String mdText = "### " + title + "\n\n" + content;
+        markwon.setMarkdown(outputTv, mdText);
     }
+
 
     private void generateSchedule() {
         String vaccinationType = vaccinationTypeSpinner.getSelectedItem().toString();
@@ -122,6 +125,7 @@ public class RabiesActivity extends AppCompatActivity {
 
     private String generateScheduleText(Date initialDate, int[] daysArray) {
         StringBuilder scheduleText = new StringBuilder();
+        scheduleText.append("### Vaccination Schedule\n\n");
 
         for (int i = 0; i < daysArray.length; i++) {
             Calendar doseCalendar = Calendar.getInstance();
@@ -129,13 +133,14 @@ public class RabiesActivity extends AppCompatActivity {
             doseCalendar.add(Calendar.DAY_OF_YEAR, daysArray[i]);
             Date doseDate = doseCalendar.getTime();
 
-            scheduleText.append("Dose ").append(i + 1).append(": ")
+            scheduleText.append("- **Dose ").append(i + 1).append(":** ")
                     .append(formatDate(doseDate))
                     .append("\n");
         }
 
         return scheduleText.toString();
     }
+
 
     private String formatDate(Date date) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());

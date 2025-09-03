@@ -6,8 +6,11 @@
     android:layout_width="match_parent"
     app:iconGravity="top"
     android:padding="30dp"
-    style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
-    app:cornerRadius="20dp"
+    app:iconPadding="20dp"
+    app:elevation="5dp"
+    app:iconSize="50dp"
+    style="@style/Widget.Material3.Button.IconButton.Outlined"
+    app:cornerRadius="40dp"
     android:layout_height="wrap_content"
     android:layout_margin="5dp">
 
