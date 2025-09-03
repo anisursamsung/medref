@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".predefined.pregnancy.PregnancyActivity">
+
+    <!-- Top Toolbar -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        app:titleCentered="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="Pregnancy" />
+
+    <!-- Scrollable content zone -->
+    <ScrollView
+        android:id="@+id/output_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="10dp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/showOutput"
+            android:textSize="14sp"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </ScrollView>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:scrollbars="none"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/more_ribbon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+            android:padding="8dp">
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:id="@+id/fundal_height_button"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_height="wrap_content"
+                android:text="Fundal Height" />
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:id="@+id/find_lmp_button"
+                android:layout_marginStart="8dp"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_height="wrap_content"
+                android:text="Find LMP" />
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:id="@+id/bengali_english_calendar_button"
+                android:layout_marginStart="8dp"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_height="wrap_content"
+                android:text="Bengali date converter" />
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:id="@+id/safe_drugs_button"
+                android:layout_marginStart="8dp"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_height="wrap_content"
+                android:text="Pregnancy safe drugs" />
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:id="@+id/contraindicated_drugs_button"
+                android:layout_marginStart="8dp"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_height="wrap_content"
+                android:text="Pregnancy drugs of concern" />
+        </LinearLayout>
+    </HorizontalScrollView>
+            <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        android:elevation="5dp"
+        android:background="@drawable/rabies_calculation_bg"
+        android:padding="20dp">
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select day 1 of LMP:"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+        <DatePicker
+            android:id="@+id/date_picker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/calculate_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calculate"
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"/>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".predefined.RabiesActivity">
+
+    <!-- Top Toolbar -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        app:titleCentered="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title="Rabies" />
+
+    <!-- Scrollable content zone -->
+    <ScrollView
+        android:id="@+id/output_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="10dp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/showOutput"
+            android:padding="10dp"
+            android:textSize="14sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </ScrollView>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:scrollbars="none"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/more_ribbon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+            android:padding="8dp">
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:id="@+id/fast_aid_button"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_height="wrap_content"
+                android:text="First aid" />
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:id="@+id/vaccine_button"
+                android:layout_marginStart="8dp"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_height="wrap_content"
+                android:text="Vaccine" />
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:id="@+id/antibodies_button"
+                android:layout_marginStart="8dp"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_height="wrap_content"
+                android:text="Antibody" />
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:id="@+id/other_medicine_button"
+                android:layout_marginStart="8dp"
+                android:layout_height="wrap_content"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:text="Other Medicines" />
+        </LinearLayout>
+    </HorizontalScrollView>
+    <!-- Calculation zone at the bottom -->
+    <LinearLayout
+        android:id="@+id/rabies_calculation_zone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        android:elevation="5dp"
+        android:background="@drawable/rabies_calculation_bg"
+        android:padding="20dp">
+
+        <com.google.android.material.textview.MaterialTextView
+            id="@+id/select_vaccination_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Vaccination Type:"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/vaccination_type_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="40dp"
+            android:layout_marginBottom="16dp" />
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Day 0:"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+        <DatePicker
+            android:id="@+id/initial_dose_date_picker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/generate_schedule_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Generate Schedule"
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"/>
+    </LinearLayout>
+
+</LinearLayout>

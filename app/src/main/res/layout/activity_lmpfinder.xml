@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+
+    <!-- Simple Toolbar -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:title="Find LMP"
+        app:titleCentered="true"
+        android:paddingHorizontal="16dp" />
+
+    <!-- Content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="24dp"
+        android:gravity="center_horizontal">
+
+        <!-- Result -->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_lmp_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Your LMP will appear here"
+            android:textSize="20sp"
+            android:padding="20dp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textAppearance="?attr/textAppearanceHeadlineSmall" />
+
+        <!-- Input Label -->
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Please enter the Gestational Age found by Fundal Height or USG:"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:paddingTop="24dp"
+            android:paddingBottom="8dp"
+            android:textAppearance="?attr/textAppearanceBodyMedium" />
+
+        <!-- Material Input for GA -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_gestational_age"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Gestational Age (weeks)">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_gestational_age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Date Selection Label -->
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select the date of Fundal Height Examination or USG:"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:paddingTop="24dp"
+            android:paddingBottom="8dp"
+            android:textAppearance="?attr/textAppearanceBodyMedium" />
+        <!-- Material Date Picker (Spinner Mode) -->
+        <DatePicker
+            android:id="@+id/date_picker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner"
+            android:layout_gravity="center_horizontal" />
+
+        <!-- Action Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_calculate_lmp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Find LMP"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="32dp"
+            android:paddingVertical="14dp"
+            app:cornerRadius="28dp"
+            style="@style/Widget.Material3.Button.TonalButton" />
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_find_lmp"
+        android:title="Find LMP"
+        android:icon="@drawable/pregnant_woman_svgrepo_com"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_converter"
+        android:title="Date Converter (Banlgla-English)"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_fundal_height"
+        android:title="Fundal Height"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_safe_drugs"
+        android:title="Safe drugs in Pregnancy"
+        app:showAsAction="never" />
+</menu>

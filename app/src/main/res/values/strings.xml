@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name">MedRef</string>
+    <string-array name="vaccination_types_array">
+        <item>Intradermal</item>
+        <item>Intramuscular</item>
+    </string-array>
+    <string name="fast_aid_rabies">
+        \nWash the wound thoroughly under running water with soap for at least 10 minutes.
+        \nDo NOT apply any bandages.
+ </string>
+    <string name="other_med_rabies">
+        \nTetanus toxoid (TT) should be given.
+        \nOral or IV antibiotics, PPI and Analgesics are given if necessary.
+    </string>
+    <string name="vaccine_rabies">
+        \nNo ARV (Vaccine) needed if it was given within the last 3 months.
+        \nOnly 2 initial doses are required if previously immunized.
+        \nNo contraindications to ARV.
+        \nThe day of visit = Day 0.
+        \nARV should be administered within 7 days of the bite.
+    </string>
+    <string name="antibody_rabies">
+        \n\nTwo types of Immunologlobulin - ERIG (Equine Rabies Immunoglobulin) and HRIG (Human Rabies Immunoglobulin).
+        \nCommonly given is ERIG.
+        \nIndicated in cases of extensive wounds.
+        \nHRIG dosage = half the dose of ERIG.
+        \n\nDosage:
+        \nInj. Equirab 1500IU(ERIG)- Weight x 40 IU= Half SC around wound, half IM STAT.
+    </string>
+
+    <string name="RABIES_VACCINE_INFO">text</string>
+    <string name="RABIES_ANTIBODY_INFO" formatted="true">Rabies antibodies are proteins produced by the immune system in
+        response to the rabies  the need for additional doses.</string>
+    <string name="RABIES_FIRST_AID_INFO">In the event of a potential rabies exposure, immediate first
+        aidial for preventing the development of rabies, which is almost
+        always fatal once symptoms appear.</string>
+    <string name="pre_eclampsia">hi this is preeclampsia info</string>
+    <string name="prom">hi this is prom info</string>
+    <string name="nvd">hi this is nvd info</string>
+    <string name="gcs_explain">
+        No sternal rubs:
+        \n• Bruising
+        \n• Difficult to interpret
+
+        \n\nRetromandibular pressure:
+        \n• Not routinely recommended
+
+        \n\nBest predictor of outcome:
+        \n• Motor response
+
+        \n\nNon-testable (NT):
+        \n• E.g., Intubated → VNT
+
+        \n\n⚠ Combined score shouldn’t be used.
+
+        \n\nInterpretation:
+        \n• 13–15: Mild HI
+        \n• 9–12: Moderate HI
+        \n• ≤8: Severe HI
+</string>
+    <string name="calendar_disc">
+    The Indian Bengali calendar follows the lunar phases and hence it is hard to synchronize by
+    a formula. On the other hand Bangladeshi calendar has been messed up
+    by adopting the new rule of Poela Boisakh starting on same English day every year.
+    This Converter is more aligned with Bangladeshi new calendar system which differes
+    with Indian Bengali system by some days. So, this should be used for rough estimation. 1-5 days of error can occur specially if you want Indian System."
+
+
+</string>
+
+</resources>

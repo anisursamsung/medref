@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.button.MaterialButton
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/button_item"
+    android:layout_width="match_parent"
+    app:iconGravity="top"
+    android:padding="30dp"
+    style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+    app:cornerRadius="20dp"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp">
+
+</com.google.android.material.button.MaterialButton>
