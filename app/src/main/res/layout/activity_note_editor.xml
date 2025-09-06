@@ -1,28 +1,70 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
+    android:id="@+id/main_layout"
     android:layout_height="match_parent">
 
     <!-- Top App Bar -->
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/topAppBar"
-        app:titleCentered="true"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        app:title="Note"
-        app:menu="@menu/menu_note_editor" />
+        app:title="Note" />
 
-    <com.google.android.material.textfield.TextInputEditText
+    <!-- Note Image -->
+    <ImageView
+        android:id="@+id/note_image"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/topAppBar"
+        android:scaleType="centerCrop"
+        android:contentDescription="Note image"
+        android:visibility="gone" />
+
+
+
+    <LinearLayout
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="8dp">
+        <ImageButton
+            android:id="@+id/action_bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginEnd="20dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+
+            android:contentDescription="Bold" />
+
+        <ImageButton
+            android:id="@+id/action_italic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Italic" />
+    </LinearLayout>
+
+<com.google.android.material.textfield.TextInputEditText
         android:id="@+id/note_body"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:hint="Write your note..."
-        android:background="@null"
+        android:layout_above="@id/bottom_bar"
+        android:hint="Start writing..."
+        android:layout_below="@+id/topAppBar"
         android:gravity="top"
+        android:padding="12dp"
+        android:background="@android:color/transparent"
         android:inputType="textMultiLine"
-        android:scrollbars="none"
         android:textSize="16sp"
-        android:padding="16dp" />
+        android:overScrollMode="ifContentScrolls"
+        android:scrollbars="vertical" />
 
-</LinearLayout>
+</RelativeLayout>

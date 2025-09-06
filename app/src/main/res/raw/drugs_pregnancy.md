@@ -1,0 +1,95 @@
+## SAFE DRUGS
+- **Tab. Folate:** 1-tab ODPC, till 14 weeks
+- **Tab. IFA:** 1-tab ODAC 1 hour from 14 weeks till 6 months post Delivery.
+- **Tab. Calcium:** 1-tab ODPC from start till 6 months post Delivery
+- **Tab. Doxylamine:** 1 tab at bedtime x 15 days
+- **Tab. Ondansetron 4 mg:** 1 tab at bedtime x 7 days.
+- **Tab. Tramadol:** 1 tab 6 hourly
+- **Tab. Mebendazole:** 1-tab stat for 1st trimester pregnancy
+- **Tab. Albendazole 400 mg:** 1-tab stat for pregnancy more than 4 months
+- **ORS Salt:** As much as possible
+- **N/D Xylometazoline**
+- **Syp. Grillinctus:** 2 tsp ODHS x 10 days
+- **Calamine Lotion:** DOC for itching in pregnancy
+- **Tab. Levocetirizine**
+- **Tab. Montelukast**
+- **Tab. Pantoprazole 40mg**
+- **Tab. Ranitidine/ Gel Mucaine**
+- **Oint. Miconazole**
+- **Tab. Penicillin**
+- **Tab. Amoxicillin**
+- **Tab. Cephalosporin**
+- **Tab. Labetalol 100 mg:** 1-tab TDS till BP controlled. Change to Amlodipine post Delivery.
+- **Syp. Alkasol**
+- **Cap. Clingen vaginal pessary:** 1-tab ODPV at bedtime for Leucorrhoea.
+- **Tab. Thyronon 25 /50/100 mg:** If TSH >4.8, Normal 0.4-4.8
+- **Tab. Cabergoline 0.5 mg:** 2 tabs stat to stop lactation
+- **Syp. Multivitamins:** 2tsp BDPC x 30 days.
+
+---
+## DRUGS OF CONCERN
+### Absolute Contraindication
+- Cytotoxic drug (MTX)
+- Alcohol
+- ACE inhibitors
+- Lithium
+- Valproate
+- Mifepristone
+- Danazol
+- Isotretinoin
+- Radioactive Iodine and others
+- Efavirenz
+### No recommended
+- Androgenic steroids
+### Vaccines
+- **Contraindicated:**
+    - Live vaccines
+    - MMR
+    - Varicella
+    - Yellow fever
+- **Safe:**
+    - Rabies
+    - Hep A, B
+    - Toxoids
+### Corticosteroids
+- Avoid high dose (>10mg prednisolone daily) and prolong use.
+### Antiepileptics
+- Phenytoin: Can be given as benefit outweigh risk.
+- Valproate
+- Carbamazepine
+### Aspirin
+- Avoid high dose in late pregnancy
+### Cocaine
+- Avoid
+### Antimalarial
+- Benefit outweigh risks, no evidence of risk at therapeutic level.
+### Aminoglycosides
+- Avoid because it is nephrotoxic and ototoxic in preterm.
+### Chloramphenicol
+- Avoid
+### Tetracycline
+- Avoid
+### Fluroquinolones
+- Avoid.
+- Although no evidence of human risk is found. Arthropathy in animal.
+### Long acting sulphonamides
+- Avoid.
+- Hemolysis in G6PDD
+### Nitrofurantoin
+- Avoid.
+- Hemolysis in G6PDD
+### Metronidazole
+- No risk.
+- Avoid high dose
+### Cimetidine, Omeprazole, Ranitidine
+- No known risk
+### Acyclovir
+- No risk
+## Narcotics
+- Avoid
+### Smoking (Nicotine, CO,and other polycyclic hydrocarbons)
+- Avoid
+### Vit A
+- Avoid large dose
+
+---

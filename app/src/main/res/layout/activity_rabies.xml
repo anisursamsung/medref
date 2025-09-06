@@ -13,7 +13,7 @@
         app:titleCentered="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:title="Rabies" />
+        app:title="Dog bite" />
 
     <!-- Scrollable content zone -->
     <ScrollView

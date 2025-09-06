@@ -1,19 +1,33 @@
+# Ignore all files by default
 /*
 !/app/
-/app/release/
 
+# Ignore directories related to Android build processes
 *.iml
 .gradle
 /local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
+/.idea/
+*.apk
+*.ap_
+*.aab
+*.so
+/build/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Ignore generated directories
+/app/build/
+/app/release/
+/app/intermediates/
+/app/.gradle/
+
+# Test-related files/folders
+/androidTest/
+/test/
+
+# Ignore macOS specific files
 .DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+
+# Ignore some Android specific files and directories
 local.properties

@@ -15,43 +15,75 @@ import com.google.android.material.color.DynamicColors;
 import com.google.android.material.textview.MaterialTextView;
 
 import java.io.InputStream;
+import java.util.Objects;
 import java.util.Scanner;
 
 import io.noties.markwon.Markwon;
 
 public class ModelActivity extends AppCompatActivity {
     private MaterialToolbar toolbar;
+    private PhotoView imageView;
+    private   MaterialTextView textView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_model);
-
         toolbar = findViewById(R.id.toolbar);
-        PhotoView imageView = findViewById(R.id.model_image);
-        MaterialTextView textView = findViewById(R.id.model_text);
+        imageView = findViewById(R.id.model_image);
+        textView = findViewById(R.id.model_text);
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
-        // Get key from intent
-        int  imageResId = getIntent().getIntExtra("imageResId",-1);
-        int mdFileResId  = getIntent().getIntExtra("mdFileResId",-1);
-        if(imageResId==-1){
-            imageView.setVisibility(View.GONE);
-        } else {
-            imageView.setImageResource(imageResId);
-        }
-        if(mdFileResId==-1){
-            textView.setVisibility(View.GONE);
-        } else {
-            String textToSet = loadRawResource(mdFileResId);
-            Markwon markwon = Markwon.create(this);
-            markwon.setMarkdown(textView,textToSet);
-        }
+        String key = getIntent().getStringExtra("modelKey");
+        assert key != null;
+        if(!key.isEmpty()){
+            if(key.equals("NIS")){
+                setActivityTitle("NIS");
+                setImage(R.drawable.nis);
+                setTextData(R.raw.nis);
+            }
+            else if (key.equals("NHB")){
+                setActivityTitle("Neonatal Jaundice");
+                setImage(R.drawable.jaundice);
+                setTextData(R.raw.jaundice);
+            } else if (key.equals("GCS")){
+                setActivityTitle("Glasgow Coma Scale");
+                setImage(R.drawable.gcs);
+                setTextData(R.raw.gcs);
+            } else if (key.equals("SNB")){
+                setActivityTitle("Snake Bite");
+                imageView.setVisibility(View.GONE);
+                setTextData(R.raw.asv_doses);
 
-        String toolbarTitle = getIntent().getStringExtra("toolbarTitle");
-        getSupportActionBar().setTitle(toolbarTitle);
+            } else if (key.equals("DVM")){
+                setActivityTitle("Developmental Milestones");
+//                setImage(R.drawable.snake_4_svgrepo_com);
+                imageView.setVisibility(View.GONE);
+                setTextData(R.raw.milestones);
+            }
+            else if (key.equals("DIP")){
+                setActivityTitle("Drugs in Pregnancy");
+                setImage(R.drawable.pregnancy_safe);
+                setTextData(R.raw.drugs_pregnancy);
+            }
+        }
+    }
 
+    private void setTextData(int resId) {
+        String textToSet = loadRawResource(resId);
+        Markwon markwon = Markwon.create(this);
+        markwon.setMarkdown(textView,textToSet);
+
+    }
+
+    private void setImage(int resId){
+        imageView.setImageResource(resId);
+    }
+
+
+    private void setActivityTitle(String title){
+        Objects.requireNonNull(getSupportActionBar()).setTitle(title);
     }
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {

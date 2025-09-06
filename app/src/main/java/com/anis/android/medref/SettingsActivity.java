@@ -32,7 +32,6 @@ public class SettingsActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
         MaterialCardView itemTheme = findViewById(R.id.itemTheme);
-        MaterialCardView itemAbout = findViewById(R.id.itemAbout);
         tvThemeSummary = findViewById(R.id.tvThemeSummary);
 
         // Load current theme choice
@@ -42,13 +41,7 @@ public class SettingsActivity extends AppCompatActivity {
 
         itemTheme.setOnClickListener(v -> showThemeDialog(prefs));
 
-        itemAbout.setOnClickListener(v -> {
-            new AlertDialog.Builder(this)
-                    .setTitle("Medref App")
-                    .setMessage("Version: 0.1.0-alpha\n\nDeveloped by: Dr Anisur Rahman.")
-                    .setPositiveButton("OK", null)
-                    .show();
-        });
+
     }
 
     private void showThemeDialog(SharedPreferences prefs) {

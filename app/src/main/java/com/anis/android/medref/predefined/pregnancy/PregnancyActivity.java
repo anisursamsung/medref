@@ -151,11 +151,10 @@ public class PregnancyActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
     private void configureButtons() {
-        MaterialButton findLmp,fundalH,safeDrug,concernDrug,calendrConv;
+        MaterialButton findLmp,fundalH,calendrConv;
         findLmp = findViewById(R.id.find_lmp_button);
         fundalH = findViewById(R.id.fundal_height_button);
-        safeDrug = findViewById(R.id.safe_drugs_button);
-        concernDrug = findViewById(R.id.contraindicated_drugs_button);
+
         calendrConv = findViewById(R.id.bengali_english_calendar_button);
 
         findLmp.setOnClickListener(new View.OnClickListener() {
@@ -172,18 +171,7 @@ public class PregnancyActivity extends AppCompatActivity {
                 showDialogOfFundalHeight();
             }
         });
-        safeDrug.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                launchModelActivity(R.raw.safe_drus_pregnancy,-1, "Pregnancy Safe Drugs");
-            }
-        });
-         concernDrug.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                launchModelActivity(R.raw.drugs_of_concern,-1, "Pregnancy Safe Drugs");
-            }
-        });
+
         calendrConv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -193,11 +181,9 @@ public class PregnancyActivity extends AppCompatActivity {
         });
 
     }
-    private void launchModelActivity(int mdFile, int image,String title) {
+    private void launchModelActivity(String modelKey) {
         Intent intent = new Intent(this, ModelActivity.class);
-        intent.putExtra("imageResId",image );
-        intent.putExtra("mdFileResId",mdFile);
-        intent.putExtra("toolbarTitle",title);
+        intent.putExtra("modelKey",modelKey );
         startActivity(intent);
     }
 

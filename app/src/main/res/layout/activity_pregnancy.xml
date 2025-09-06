@@ -47,7 +47,7 @@
                 android:id="@+id/fundal_height_button"
                 style="@style/Widget.Material3.Button.ElevatedButton"
                 android:layout_height="wrap_content"
-                android:text="Fundal Height" />
+                android:text="FH" />
             <com.google.android.material.button.MaterialButton
                 android:layout_width="wrap_content"
                 android:id="@+id/find_lmp_button"
@@ -62,20 +62,6 @@
                 style="@style/Widget.Material3.Button.ElevatedButton"
                 android:layout_height="wrap_content"
                 android:text="Bengali date converter" />
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="wrap_content"
-                android:id="@+id/safe_drugs_button"
-                android:layout_marginStart="8dp"
-                style="@style/Widget.Material3.Button.ElevatedButton"
-                android:layout_height="wrap_content"
-                android:text="Pregnancy safe drugs" />
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="wrap_content"
-                android:id="@+id/contraindicated_drugs_button"
-                android:layout_marginStart="8dp"
-                style="@style/Widget.Material3.Button.ElevatedButton"
-                android:layout_height="wrap_content"
-                android:text="Pregnancy drugs of concern" />
         </LinearLayout>
     </HorizontalScrollView>
             <LinearLayout

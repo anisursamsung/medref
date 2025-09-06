@@ -3,27 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
+        android:name=".MedRefApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:name=".MedRefApp"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MedRef">
         <activity
-            android:name=".SettingsActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".predefined.textimagemodel.ModelActivity"
-            android:exported="false" />
-        <activity
-            android:name=".custom.NoteEditorActivity"
-            android:exported="false" />
-        <activity
-            android:name=".predefined.pregnancy.LMPFinderActivity"
+            android:name=".AboutActivity"
             android:exported="false" />
         <activity
             android:name=".main.MainActivity"
@@ -35,6 +25,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".predefined.textimagemodel.ModelActivity"
+            android:exported="false" />
+        <activity
+            android:name=".custom.NoteEditorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".predefined.pregnancy.LMPFinderActivity"
+            android:exported="false" />
         <activity
             android:name=".predefined.pregnancy.PregnancyActivity"
             android:exported="false" />
