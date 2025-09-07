@@ -25,16 +25,15 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.github.chrisbanes.photoview.PhotoView
-                android:id="@+id/model_image"
+            <LinearLayout
+                android:id="@+id/image_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:scaleType="centerCrop"
-                android:contentDescription="@string/app_name"
-                android:src="@drawable/jaundice" />
+                android:orientation="vertical"
+                android:paddingBottom="8dp"/>
 
-          <com.google.android.material.textview.MaterialTextView
+
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/model_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

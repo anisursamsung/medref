@@ -48,6 +48,7 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
     implementation("com.github.chrisbanes:PhotoView:2.3.0")
     implementation("io.noties.markwon:core:4.6.2")
+    implementation("io.noties.markwon:html:4.6.2")
 
 
 }

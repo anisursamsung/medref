@@ -1,4 +1,6 @@
 <resources>
+    <string name="navigation_drawer_open">Open drawer</string>
+    <string name="navigation_drawer_close">Close drawer</string>
     <string name="app_name">MedRef</string>
     <string-array name="vaccination_types_array">
         <item>Intradermal</item>
@@ -68,6 +70,9 @@
     by adopting the new rule of Poela Boisakh starting on same English day every year.
     This Converter is more aligned with Bangladeshi new calendar system which differes
     with Indian Bengali system by some days. So, this should be used for rough estimation. 1-5 days of error can occur specially if you want Indian System."
+
+
+
 
 
 </string>

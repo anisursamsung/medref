@@ -181,11 +181,6 @@ public class PregnancyActivity extends AppCompatActivity {
         });
 
     }
-    private void launchModelActivity(String modelKey) {
-        Intent intent = new Intent(this, ModelActivity.class);
-        intent.putExtra("modelKey",modelKey );
-        startActivity(intent);
-    }
 
 
     private void showDialogOfFundalHeight() {

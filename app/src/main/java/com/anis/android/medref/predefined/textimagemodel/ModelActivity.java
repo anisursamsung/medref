@@ -3,6 +3,8 @@ package com.anis.android.medref.predefined.textimagemodel;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -22,14 +24,16 @@ import io.noties.markwon.Markwon;
 
 public class ModelActivity extends AppCompatActivity {
     private MaterialToolbar toolbar;
-    private PhotoView imageView;
+    private LinearLayout imageContainer;
+
     private   MaterialTextView textView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_model);
         toolbar = findViewById(R.id.toolbar);
-        imageView = findViewById(R.id.model_image);
+        imageContainer = findViewById(R.id.image_container);
+
         textView = findViewById(R.id.model_text);
 
         setSupportActionBar(toolbar);
@@ -40,31 +44,31 @@ public class ModelActivity extends AppCompatActivity {
         if(!key.isEmpty()){
             if(key.equals("NIS")){
                 setActivityTitle("NIS");
-                setImage(R.drawable.nis);
+                addImages(R.drawable.nis,R.drawable.aefi);
                 setTextData(R.raw.nis);
             }
             else if (key.equals("NHB")){
                 setActivityTitle("Neonatal Jaundice");
-                setImage(R.drawable.jaundice);
+                addImage(R.drawable.jaundice);
                 setTextData(R.raw.jaundice);
             } else if (key.equals("GCS")){
                 setActivityTitle("Glasgow Coma Scale");
-                setImage(R.drawable.gcs);
+                addImage(R.drawable.gcs);
                 setTextData(R.raw.gcs);
             } else if (key.equals("SNB")){
                 setActivityTitle("Snake Bite");
-                imageView.setVisibility(View.GONE);
+                imageContainer.setVisibility(View.GONE);
                 setTextData(R.raw.asv_doses);
 
             } else if (key.equals("DVM")){
                 setActivityTitle("Developmental Milestones");
 //                setImage(R.drawable.snake_4_svgrepo_com);
-                imageView.setVisibility(View.GONE);
+                imageContainer.setVisibility(View.GONE);
                 setTextData(R.raw.milestones);
             }
             else if (key.equals("DIP")){
                 setActivityTitle("Drugs in Pregnancy");
-                setImage(R.drawable.pregnancy_safe);
+                addImage(R.drawable.pregnancy_safe);
                 setTextData(R.raw.drugs_pregnancy);
             }
         }
@@ -76,10 +80,27 @@ public class ModelActivity extends AppCompatActivity {
         markwon.setMarkdown(textView,textToSet);
 
     }
-
-    private void setImage(int resId){
-        imageView.setImageResource(resId);
+    private void addImage(int resId) {
+        PhotoView photoView = new PhotoView(this);
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
+        params.setMargins(0, 0, 0, 8); // spacing between images
+        photoView.setLayoutParams(params);
+        photoView.setAdjustViewBounds(true);
+        photoView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        photoView.setImageResource(resId);
+        imageContainer.addView(photoView);
     }
+
+    private void addImages(int... resIds) {
+        imageContainer.removeAllViews(); // clear previous
+        for (int resId : resIds) {
+            addImage(resId);
+        }
+    }
+
 
 
     private void setActivityTitle(String title){

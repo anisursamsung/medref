@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
@@ -28,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private final String[] titles = {"Quick Reference", "Subjects"};
     private int[] tabIcons = {
             R.drawable.prescription_svgrepo_com,
-            R.drawable.book_svgrepo_com
+            R.drawable.ic_books
     };
     private TabLayout tabLayout;
     @Override

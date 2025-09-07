@@ -97,7 +97,7 @@ public class QuickRefFragment extends Fragment implements SearchableFragment {
 
         // Add predefined items with the necessary flags
         referenceList.add(new ReferenceItem("ANC", "Find LMP, EDD, GA etc.", true, false, false, "ANC", R.drawable.pregnant_woman_svgrepo_com));
-        referenceList.add(new ReferenceItem("Drugs in Pregnancy", "Safe drugs vs Drugs of Concern in preganncy", false, true, false, "DIP", R.drawable.pregnant_woman_svgrepo_com));
+        referenceList.add(new ReferenceItem("Drugs in Pregnancy", "Safe drugs vs Drugs of Concern in preganncy", false, true, false, "DIP", R.drawable.ic_medicine));
         referenceList.add(new ReferenceItem("Dog bite", "ARV schedule, management principles etc.", true, false, false, "RAB", R.drawable.dog_svgrepo_com));
         referenceList.add(new ReferenceItem("NIS", "National Immunization Schedule", false, true, false, "NIS", R.drawable.vaccine));
         referenceList.add(new ReferenceItem("Neonatal Hyperbilirubinemia", "Criteria for phototherapy and others", false, true, false, "NHB", R.drawable.baby_svgrepo_com));
