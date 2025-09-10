@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.anis.android.medref.R;
 import com.anis.android.medref.custom.NoteEditorActivity;
@@ -107,6 +108,7 @@ public class QuickRefFragment extends Fragment implements SearchableFragment {
 
         // Add user-created notes
         loadUserNotes();
+        Toast.makeText(getContext(),"hi",Toast.LENGTH_LONG).show();
 
         filteredList.addAll(referenceList);
         adapter.notifyDataSetChanged();
@@ -118,8 +120,8 @@ public class QuickRefFragment extends Fragment implements SearchableFragment {
 
         // Handle case where no notes are present
         if (count == 0) {
-            referenceList.clear();
-            filteredList.clear();
+//            referenceList.clear();
+//            filteredList.clear();
             return;
         }
 
