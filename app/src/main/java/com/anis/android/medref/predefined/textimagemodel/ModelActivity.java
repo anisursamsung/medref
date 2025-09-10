@@ -2,10 +2,8 @@ package com.anis.android.medref.predefined.textimagemodel;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,18 +11,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.anis.android.medref.R;
 import com.github.chrisbanes.photoview.PhotoView;
 import com.google.android.material.appbar.MaterialToolbar;
-import com.google.android.material.color.DynamicColors;
 import com.google.android.material.textview.MaterialTextView;
 
+import java.io.BufferedReader;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.Objects;
 import java.util.Scanner;
 
 import io.noties.markwon.Markwon;
+import io.noties.markwon.image.picasso.PicassoImagesPlugin;
 
 public class ModelActivity extends AppCompatActivity {
     private MaterialToolbar toolbar;
-    private LinearLayout imageContainer;
 
     private   MaterialTextView textView;
     @Override
@@ -32,7 +31,6 @@ public class ModelActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_model);
         toolbar = findViewById(R.id.toolbar);
-        imageContainer = findViewById(R.id.image_container);
 
         textView = findViewById(R.id.model_text);
 
@@ -44,62 +42,81 @@ public class ModelActivity extends AppCompatActivity {
         if(!key.isEmpty()){
             if(key.equals("NIS")){
                 setActivityTitle("NIS");
-                addImages(R.drawable.nis,R.drawable.aefi);
-                setTextData(R.raw.nis);
+                setTextData("quickrefs/files/nis.md");
             }
             else if (key.equals("NHB")){
                 setActivityTitle("Neonatal Jaundice");
-                addImage(R.drawable.jaundice);
-                setTextData(R.raw.jaundice);
-            } else if (key.equals("GCS")){
+                setTextData("quickrefs/files/jaundice.md");
+            }
+            else if (key.equals("GCS")){
                 setActivityTitle("Glasgow Coma Scale");
-                addImage(R.drawable.gcs);
-                setTextData(R.raw.gcs);
-            } else if (key.equals("SNB")){
+                setTextData("quickrefs/files/gcs.md");
+            }
+            else if (key.equals("SNB")){
                 setActivityTitle("Snake Bite");
-                imageContainer.setVisibility(View.GONE);
-                setTextData(R.raw.asv_doses);
+                setTextData("quickrefs/files/asv_doses.md");
 
-            } else if (key.equals("DVM")){
+            }
+            else if (key.equals("DVM")){
                 setActivityTitle("Developmental Milestones");
-//                setImage(R.drawable.snake_4_svgrepo_com);
-                imageContainer.setVisibility(View.GONE);
-                setTextData(R.raw.milestones);
+                setTextData("quickrefs/files/milestones.md");
             }
             else if (key.equals("DIP")){
                 setActivityTitle("Drugs in Pregnancy");
-                addImage(R.drawable.pregnancy_safe);
-                setTextData(R.raw.drugs_pregnancy);
+                setTextData("quickrefs/files/drugs_pregnancy.md");
             }
         }
     }
 
-    private void setTextData(int resId) {
-        String textToSet = loadRawResource(resId);
-        Markwon markwon = Markwon.create(this);
-        markwon.setMarkdown(textView,textToSet);
 
-    }
-    private void addImage(int resId) {
-        PhotoView photoView = new PhotoView(this);
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
-        );
-        params.setMargins(0, 0, 0, 8); // spacing between images
-        photoView.setLayoutParams(params);
-        photoView.setAdjustViewBounds(true);
-        photoView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        photoView.setImageResource(resId);
-        imageContainer.addView(photoView);
-    }
+    private void setTextData(String filename) {
 
-    private void addImages(int... resIds) {
-        imageContainer.removeAllViews(); // clear previous
-        for (int resId : resIds) {
-            addImage(resId);
+
+        String textToSet = loadMarkdownFromAssets(filename);
+        Markwon markwon = Markwon.builder(this)
+                .usePlugin(PicassoImagesPlugin.create(this))
+                .build();
+        markwon.setMarkdown(textView, textToSet);
+    }
+//        String textToSet = loadRawResource(resId);
+//
+//        // Create Markwon instance with Picasso plugin
+//        Markwon markwon = Markwon.builder(this)
+//                .usePlugin(PicassoImagesPlugin.create(this))
+//                .build();
+//
+//        markwon.setMarkdown(textView, textToSet);
+//    }
+
+//    private void setTextData(int resId) {
+//        String textToSet = loadRawResource(resId);
+//
+//        // Create Markwon instance with Picasso plugin
+//        Markwon markwon = Markwon.builder(this)
+//                .usePlugin(PicassoImagesPlugin.create(this))
+//                .build();
+//
+//        markwon.setMarkdown(textView, textToSet);
+//    }
+    private String loadMarkdownFromAssets(String filename) {
+        try {
+            InputStream inputStream = getAssets().open(filename);
+            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+            StringBuilder builder = new StringBuilder();
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+                builder.append(line).append("\n");
+            }
+
+            reader.close();
+            return builder.toString();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "Error loading markdown file: " + filename;
         }
     }
+
 
 
 

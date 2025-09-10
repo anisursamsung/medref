@@ -72,8 +72,9 @@ public class BookViewerActivity extends AppCompatActivity {
         }
 
         if (fileName == null) {
-            fileName = "mdfiles/sample.md"; // fallback
+            fileName = "sample.md"; // fallback
         }
+
 
         markwon = Markwon.builder(this)
                 .usePlugin(HtmlPlugin.create())

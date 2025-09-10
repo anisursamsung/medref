@@ -1,8 +1,5 @@
-# Quick Look
-
-![Sample Image](file:///android_asset/mdfile_images/nis/nis.png)
-
-# Baby
+![NIS](file:///android_asset/quickrefs/images/nis.png)
+## Baby
 - **BCG:**
   - At birth or as early as possible till one year of age
   - 0.1ml (0.05ml until 1 month age) 
@@ -67,7 +64,7 @@
   - 0.5 ml
   - IM (Upper arm)
 
-# Pregnancy
+## Pregnancy
 - **Td 1 and Td 2 or Td-Booster:**
   - If received 2 TT/Td doses in a pregnancy within the last 3 years: Only single dose of **Td-Booster**.
   - If not:
@@ -75,8 +72,6 @@
     - Td 2: After 4 weeks of Td1.
   - 0.5 ml
   - IM (Upper arm)
+## AEFI Management
 
-# AEFI MANAGEMENT
-
-![Sample Image](file:///android_asset/mdfile_images/nis/aefi.jpeg)
-
+![AEFI](file:///android_asset/quickrefs/images/aefi.jpeg)

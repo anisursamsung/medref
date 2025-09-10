@@ -1,3 +1,5 @@
+![Phototherapy](file:///android_asset/quickrefs/images/jaundice.webp)
+
 ## Red Flags
 - Onset **<24 hrs**
 - **Rapid rise** >5 mg/dL/day

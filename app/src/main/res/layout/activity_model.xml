@@ -14,34 +14,27 @@
         android:layout_height="wrap_content"
       />
 
-    <!-- Scrollable content -->
-    <androidx.core.widget.NestedScrollView
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar">
+        android:layout_marginTop="?attr/actionBarSize"
+        >
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:id="@+id/image_container"
+            android:layout_height="match_parent">
+            <com.shopgun.android.zoomlayout.ZoomLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingBottom="8dp"/>
+                android:layout_height="wrap_content">
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/model_text"
+                    android:layout_width="match_parent"
+                    android:padding="16dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp" />
+            </com.shopgun.android.zoomlayout.ZoomLayout>
 
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/model_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:textSize="14sp"
-                android:lineSpacingExtra="4dp"
-                android:text="Model description goes here." />
-        </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
-
+        </ScrollView>
+    </FrameLayout>
 </RelativeLayout>

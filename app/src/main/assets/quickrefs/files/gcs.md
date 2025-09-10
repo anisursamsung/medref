@@ -1,3 +1,5 @@
+![GCS](file:///android_asset/quickrefs/images/gcs.png)
+
 ## 👁 Eye Response
 - **4** – Spontaneous
 - **3** – To speech

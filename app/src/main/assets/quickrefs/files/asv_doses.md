@@ -1,4 +1,4 @@
-# Hospital Role of Doctor
+# Doctor's role
 - If a doctor encounters a snake bite case outside the hospital kindly manage according to **First Aid** protocol. This section deals with hospital management.
 - Recovery position.
 - Check ABC.
@@ -58,7 +58,7 @@
 - **NOTE**:
   - All the relevant topics will be found below.
 
-# QUICK REFERENCE TO GUIDE MANAGEMENT
+# Quick summary
 No bite marks mean **No bite** or **Occult bite** by krait. Presence of bite mark means dry bite or non-venomous bite or venomous bite.
 ## VIPER
 **PPS +/- Coagulopathy.**

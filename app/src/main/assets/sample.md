@@ -30,8 +30,6 @@ Here are the key features of this viewer:
 - Extracts `#` headings for navigation
 - Scrolls to section on click
 
-![Sample Image](file:///android_asset/mdfile_images/fh.png)
-
 You can also include code blocks:
 
 ```java

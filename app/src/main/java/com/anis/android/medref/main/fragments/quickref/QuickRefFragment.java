@@ -97,19 +97,17 @@ public class QuickRefFragment extends Fragment implements SearchableFragment {
         filteredList.clear();
 
         // Add predefined items with the necessary flags
-        referenceList.add(new ReferenceItem("ANC", "Find LMP, EDD, GA etc.", true, false, false, "ANC", R.drawable.pregnant_woman_svgrepo_com));
-        referenceList.add(new ReferenceItem("Drugs in Pregnancy", "Safe drugs vs Drugs of Concern in preganncy", false, true, false, "DIP", R.drawable.ic_medicine));
-        referenceList.add(new ReferenceItem("Dog bite", "ARV schedule, management principles etc.", true, false, false, "RAB", R.drawable.dog_svgrepo_com));
-        referenceList.add(new ReferenceItem("NIS", "National Immunization Schedule", false, true, false, "NIS", R.drawable.vaccine));
-        referenceList.add(new ReferenceItem("Neonatal Hyperbilirubinemia", "Criteria for phototherapy and others", false, true, false, "NHB", R.drawable.baby_svgrepo_com));
+        referenceList.add(new ReferenceItem("ANC", "Find LMP, EDD, GA etc..", true, false, false, "ANC", R.drawable.pregnant_woman_svgrepo_com));
+        referenceList.add(new ReferenceItem("Drugs in Pregnancy", "Safe vs Drugs of Concern", false, true, false, "DIP", R.drawable.ic_medicine));
+        referenceList.add(new ReferenceItem("Dog bite", "Management principles..", true, false, false, "RAB", R.drawable.dog_svgrepo_com));
+        referenceList.add(new ReferenceItem("NIS", "National Immunization Schedule..", false, true, false, "NIS", R.drawable.vaccine));
+        referenceList.add(new ReferenceItem("Neonatal Hyperbilirubinemia", "Criteria for phototherapy..", false, true, false, "NHB", R.drawable.baby_svgrepo_com));
         referenceList.add(new ReferenceItem("GCS", "Glasgow Coma Scale", false, true, false, "GCS", R.drawable.accident_svgrepo_com));
         referenceList.add(new ReferenceItem("Snake Bite", "Comprehensive management", false, true, false, "SNB", R.drawable.snake_4_svgrepo_com));
-        referenceList.add(new ReferenceItem("Milestones", "Developmental milestones in baby", false, true, false, "DVM", R.drawable.baby_crawling));
+        referenceList.add(new ReferenceItem("Milestones", "Developmental milestones..", false, true, false, "DVM", R.drawable.baby_crawling));
 
         // Add user-created notes
         loadUserNotes();
-        Toast.makeText(getContext(),"hi",Toast.LENGTH_LONG).show();
-
         filteredList.addAll(referenceList);
         adapter.notifyDataSetChanged();
     }

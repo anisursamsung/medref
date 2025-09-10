@@ -7,9 +7,9 @@
     android:clickable="true"
     android:focusable="true"
     android:id="@+id/main"
-    style="@style/Widget.Material3.CardView.Elevated"
+    style="@style/Widget.Material3.CardView.Outlined"
     android:layout_marginBottom="12dp"
- app:cardCornerRadius="12dp">
+    app:cardCornerRadius="12dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -38,7 +38,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Description"
-            android:textStyle="italic"
             android:textAppearance="?attr/textAppearanceBodySmall"
             android:id="@+id/reference_description"
             android:layout_toEndOf="@id/icon"
