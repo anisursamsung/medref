@@ -13,6 +13,7 @@ import androidx.appcompat.widget.AppCompatImageView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.anis.android.medref.R;
+import com.anis.android.medref.bookviewer.BookViewerActivity;
 import com.anis.android.medref.predefined.pregnancy.PregnancyActivity;
 import com.anis.android.medref.predefined.RabiesActivity;
 import com.anis.android.medref.predefined.textimagemodel.ModelActivity;

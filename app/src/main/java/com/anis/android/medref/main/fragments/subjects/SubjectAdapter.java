@@ -5,10 +5,10 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatImageView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.anis.android.medref.R;
@@ -58,7 +58,7 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.SubjectV
 
     static class SubjectViewHolder extends RecyclerView.ViewHolder {
         TextView label;
-        ImageView icon;
+        AppCompatImageView icon;
 
         SubjectViewHolder(@NonNull View itemView) {
             super(itemView);

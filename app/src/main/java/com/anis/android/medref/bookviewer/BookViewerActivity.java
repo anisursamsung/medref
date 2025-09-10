@@ -10,7 +10,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
-import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -28,6 +27,7 @@ import io.noties.markwon.AbstractMarkwonPlugin;
 import io.noties.markwon.Markwon;
 import io.noties.markwon.core.MarkwonTheme;
 import io.noties.markwon.html.HtmlPlugin;
+import io.noties.markwon.image.picasso.PicassoImagesPlugin;
 
 public class BookViewerActivity extends AppCompatActivity {
 
@@ -72,19 +72,21 @@ public class BookViewerActivity extends AppCompatActivity {
         }
 
         if (fileName == null) {
-            fileName = "sample.md"; // fallback
+            fileName = "mdfiles/sample.md"; // fallback
         }
 
-        // 🔽 Initialize Markwon
         markwon = Markwon.builder(this)
                 .usePlugin(HtmlPlugin.create())
+                .usePlugin(PicassoImagesPlugin.create(this))
                 .usePlugin(new AbstractMarkwonPlugin() {
                     @Override
                     public void configureTheme(MarkwonTheme.Builder builder) {
-                        builder.headingBreakHeight(0); // Optional
+                        builder.headingBreakHeight(0);
                     }
                 })
                 .build();
+
+
 
         // 🔽 Load and render Markdown
         markdownContent = loadMarkdownFromAssets(fileName);

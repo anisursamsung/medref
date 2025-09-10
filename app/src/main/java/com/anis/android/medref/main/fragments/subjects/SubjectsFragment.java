@@ -52,13 +52,8 @@ public class SubjectsFragment extends Fragment implements SearchableFragment {
         filteredList.clear();
 
         // Sample predefined subjects (label + icon)
-        subjectList.add(new SubjectItem("Medicine", R.drawable.ic_books,"sample.md"));
-        subjectList.add(new SubjectItem("Surgery", R.drawable.ic_books,"sample.md"));
-        subjectList.add(new SubjectItem("Eye", R.drawable.ic_books,"sample.md"));
-        subjectList.add(new SubjectItem("Ear Nose Throat", R.drawable.ic_books,"sample.md"));
-        subjectList.add(new SubjectItem("Obs and Gynae", R.drawable.ic_books,"sample.md"));
-        subjectList.add(new SubjectItem("Orthopaedics", R.drawable.ic_books,"sample.md"));
-        subjectList.add(new SubjectItem("Emergency Medicine", R.drawable.ic_books,"sample.md"));
+        subjectList.add(new SubjectItem("Sample", R.drawable.ic_books, "mdfiles/sample.md"));
+        subjectList.add(new SubjectItem("Paediatrics", R.drawable.ic_books, "mdfiles/paediatrics.md"));
         filteredList.addAll(subjectList);
         adapter.notifyDataSetChanged();
     }
