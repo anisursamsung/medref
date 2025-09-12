@@ -66,5 +66,16 @@
         android:textSize="16sp"
         android:overScrollMode="ifContentScrolls"
         android:scrollbars="vertical" />
-
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/note_body_tv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_bar"
+        android:layout_below="@+id/topAppBar"
+        android:gravity="top"
+        android:padding="12dp"
+        android:background="@android:color/transparent"
+        android:textSize="16sp"
+        android:overScrollMode="ifContentScrolls"
+        android:scrollbars="vertical" />
 </RelativeLayout>

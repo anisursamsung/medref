@@ -1,9 +1,8 @@
-package com.anis.android.medref.custom;
+package com.anis.android.medref.user;
 
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -15,19 +14,20 @@ import android.widget.Toast;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.widget.NestedScrollView;
 
 import com.anis.android.medref.R;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textview.MaterialTextView;
 
 import java.util.Objects;
 
 public class NoteEditorActivity extends AppCompatActivity {
 
     TextInputEditText bodyEditText;
+    MaterialTextView bodyTv;
     MaterialToolbar toolbar;
     RelativeLayout mainLayout;
 
@@ -48,6 +48,7 @@ public class NoteEditorActivity extends AppCompatActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
 
         bodyEditText = findViewById(R.id.note_body);
+        bodyTv = findViewById(R.id.note_body_tv);
 
         prefs = getSharedPreferences("user_notes", MODE_PRIVATE);
 
@@ -58,6 +59,7 @@ public class NoteEditorActivity extends AppCompatActivity {
             getSupportActionBar().setTitle(noteTitle);
 
             bodyEditText.setText(body);
+            bodyTv.setText(body);
             setViewMode();
         } else {
             noteTitle = getIntent().getStringExtra("newNoteTitle");
@@ -109,11 +111,13 @@ public class NoteEditorActivity extends AppCompatActivity {
     }
 
     private void setViewMode() {
-        bodyEditText.setEnabled(false);
+        bodyEditText.setVisibility(MaterialTextView.GONE);
+        bodyTv.setVisibility(MaterialTextView.VISIBLE);
     }
 
     private void enableEditMode() {
-        bodyEditText.setEnabled(true);
+        bodyEditText.setVisibility(MaterialTextView.VISIBLE);
+        bodyTv.setVisibility(MaterialTextView.GONE);
     }
 
     @Override

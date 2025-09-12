@@ -1,0 +1,25 @@
+<!-- res/layout/quick_tools_item.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/toolIcon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        app:tint="?android:attr/textColorPrimary"
+        android:src="@drawable/hammer" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/toolLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tool Name"
+        android:textSize="14sp"
+        android:layout_marginTop="8dp"
+        android:textAlignment="center"/>
+</LinearLayout>

@@ -12,9 +12,9 @@ import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 
-import com.anis.android.medref.AboutActivity;
+import com.anis.android.medref.about.AboutActivity;
 import com.anis.android.medref.R;
-import com.anis.android.medref.SettingsActivity;
+import com.anis.android.medref.settings.SettingsActivity;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
@@ -24,10 +24,10 @@ public class MainActivity extends AppCompatActivity {
     private MaterialToolbar toolbar;
     private MainPagerAdapter adapter;
     private MenuItem searchItem;
-    private final String[] titles = {"Quick Reference", "Subjects"};
+    private final String[] titles = {"Tools", "Quick topics"};
     private int[] tabIcons = {
-            R.drawable.prescription_svgrepo_com,
-            R.drawable.ic_books
+            R.drawable.hammer,
+            R.drawable.prescription_svgrepo_com
     };
     private TabLayout tabLayout;
     @Override

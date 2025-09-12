@@ -15,10 +15,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.anis.android.medref.R;
-import com.anis.android.medref.custom.NoteEditorActivity;
+import com.anis.android.medref.user.NoteEditorActivity;
 import com.anis.android.medref.main.SearchableFragment;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -26,12 +25,12 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 import java.util.List;
 
-public class QuickRefFragment extends Fragment implements SearchableFragment {
+public class QuickTopicsFragment extends Fragment implements SearchableFragment {
     private View view;
-    private RecyclerView recyclerView;
-    private ReferenceAdapter adapter;
-    private List<ReferenceItem> referenceList;
-    private List<ReferenceItem> filteredList;
+    private RecyclerView listRecyclerView;
+    private ListAdapter adapter;
+    private List<ListItem> list;
+    private List<ListItem> filteredList;
 
     private FloatingActionButton fab;
     @Nullable
@@ -39,25 +38,28 @@ public class QuickRefFragment extends Fragment implements SearchableFragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_quick_ref, container, false);
+        view = inflater.inflate(R.layout.fragment_quick_topics, container, false);
 
         findViews();
-        setupRecyclerView();
+        setupListRecyclerView();
 
         return view;
     }
+
+
+
     @Override
     public void onSearchQueryChanged(String query) {
         filterList(query);
     }
 
-    private void setupRecyclerView() {
-        recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
+    private void setupListRecyclerView() {
+        listRecyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
 
-        referenceList = new ArrayList<>();
+        list = new ArrayList<>();
         filteredList = new ArrayList<>();
-        adapter = new ReferenceAdapter(requireContext(), filteredList);
-        recyclerView.setAdapter(adapter);
+        adapter = new ListAdapter(requireContext(), filteredList);
+        listRecyclerView.setAdapter(adapter);
 
         fab.setOnClickListener(v -> {
             final EditText input = new EditText(requireContext());
@@ -83,7 +85,7 @@ public class QuickRefFragment extends Fragment implements SearchableFragment {
     }
 
     private void findViews() {
-        recyclerView =  view.findViewById(R.id.recycler_view_quick_ref);
+        listRecyclerView =  view.findViewById(R.id.recycler_view_quick_ref);
         fab = view.findViewById(R.id.add_new);
     }
 
@@ -93,33 +95,25 @@ public class QuickRefFragment extends Fragment implements SearchableFragment {
         loadItems();
     }
     private void loadItems() {
-        referenceList.clear();
+        list.clear();
         filteredList.clear();
-
-        // Add predefined items with the necessary flags
-        referenceList.add(new ReferenceItem("ANC", "Find LMP, EDD, GA etc..", true, false, false, "ANC", R.drawable.pregnant_woman_svgrepo_com));
-        referenceList.add(new ReferenceItem("Drugs in Pregnancy", "Safe vs Drugs of Concern", false, true, false, "DIP", R.drawable.ic_medicine));
-        referenceList.add(new ReferenceItem("Dog bite", "Management principles..", true, false, false, "RAB", R.drawable.dog_svgrepo_com));
-        referenceList.add(new ReferenceItem("NIS", "National Immunization Schedule..", false, true, false, "NIS", R.drawable.vaccine));
-        referenceList.add(new ReferenceItem("Neonatal Hyperbilirubinemia", "Criteria for phototherapy..", false, true, false, "NHB", R.drawable.baby_svgrepo_com));
-        referenceList.add(new ReferenceItem("GCS", "Glasgow Coma Scale", false, true, false, "GCS", R.drawable.accident_svgrepo_com));
-        referenceList.add(new ReferenceItem("Snake Bite", "Comprehensive management", false, true, false, "SNB", R.drawable.snake_4_svgrepo_com));
-        referenceList.add(new ReferenceItem("Milestones", "Developmental milestones..", false, true, false, "DVM", R.drawable.baby_crawling));
+        list.add(new ListItem("Drugs in Pregnancy", "Safe vs Drugs of Concern", false, true, false, "DIP", R.drawable.ic_medicine));
+        list.add(new ListItem("NIS", "National Immunization Schedule..", false, true, false, "NIS", R.drawable.vaccine));
+        list.add(new ListItem("Neonatal Hyperbilirubinemia", "Criteria for phototherapy..", false, true, false, "NHB", R.drawable.baby_svgrepo_com));
+        list.add(new ListItem("GCS", "Glasgow Coma Scale", false, true, false, "GCS", R.drawable.accident_svgrepo_com));
+        list.add(new ListItem("Snake Bite", "Comprehensive management", false, true, false, "SNB", R.drawable.snake_4_svgrepo_com));
+        list.add(new ListItem("Milestones", "Developmental milestones..", false, true, false, "DVM", R.drawable.baby_crawling));
 
         // Add user-created notes
         loadUserNotes();
-        filteredList.addAll(referenceList);
+        filteredList.addAll(list);
         adapter.notifyDataSetChanged();
     }
 
     private void loadUserNotes() {
         SharedPreferences prefs = requireContext().getSharedPreferences("user_notes",Context.MODE_PRIVATE);
         int count = prefs.getInt("note_count", 0);
-
-        // Handle case where no notes are present
         if (count == 0) {
-//            referenceList.clear();
-//            filteredList.clear();
             return;
         }
 
@@ -127,7 +121,7 @@ public class QuickRefFragment extends Fragment implements SearchableFragment {
             String title = prefs.getString("title_" + i, null);
             if (title != null) {
                 String description = "User-created note"; // You can customize this if needed
-                referenceList.add(new ReferenceItem(title, description, false, false, true, String.valueOf(i), R.drawable.note));
+                list.add(new ListItem(title, description, false, false, true, String.valueOf(i), R.drawable.note));
             }
         }
     }
@@ -138,9 +132,9 @@ public class QuickRefFragment extends Fragment implements SearchableFragment {
     private void filterList(String query) {
         filteredList.clear();
         if (query.isEmpty()) {
-            filteredList.addAll(referenceList);
+            filteredList.addAll(list);
         } else {
-            for (ReferenceItem item : referenceList) {
+            for (ListItem item : list) {
                 if (item.getLabel().toLowerCase().contains(query.toLowerCase())) {
                     filteredList.add(item);
                 }

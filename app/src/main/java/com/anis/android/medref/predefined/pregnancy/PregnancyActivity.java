@@ -11,10 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.anis.android.medref.R;
-import com.anis.android.medref.predefined.textimagemodel.ModelActivity;
+import com.anis.android.medref.predefined.fh.FHActivity;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.button.MaterialButton;
-import com.google.android.material.color.DynamicColors;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textview.MaterialTextView;
 
@@ -168,7 +167,7 @@ public class PregnancyActivity extends AppCompatActivity {
         fundalH.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showDialogOfFundalHeight();
+                launchFhActvity();
             }
         });
 
@@ -182,17 +181,12 @@ public class PregnancyActivity extends AppCompatActivity {
 
     }
 
-
-    private void showDialogOfFundalHeight() {
-        // Inflate the custom layout
-        View dialogView = LayoutInflater.from(this).inflate(R.layout.dialog_fundal_height, null);
-
-        new MaterialAlertDialogBuilder(this)
-                .setTitle("Fundal Height Reference")
-                .setView(dialogView)
-                .setPositiveButton("Close", (dialog, which) -> dialog.dismiss())
-                .show();
+    private void launchFhActvity() {
+        startActivity(new Intent(this, FHActivity.class));
     }
+
+
+
 
 
 }

@@ -13,10 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MedRef">
         <activity
-            android:name=".bookviewer.BookViewerActivity"
+            android:name=".predefined.fh.FHActivity"
             android:exported="false" />
         <activity
-            android:name=".AboutActivity"
+            android:name=".about.AboutActivity"
             android:exported="false" />
         <activity
             android:name=".main.MainActivity"
@@ -29,13 +29,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SettingsActivity"
+            android:name=".settings.SettingsActivity"
             android:exported="false" />
         <activity
-            android:name=".predefined.textimagemodel.ModelActivity"
+            android:name=".predefined.model.ModelActivity"
             android:exported="false" />
         <activity
-            android:name=".custom.NoteEditorActivity"
+            android:name=".user.NoteEditorActivity"
             android:exported="false" />
         <activity
             android:name=".predefined.pregnancy.LMPFinderActivity"
@@ -44,7 +44,7 @@
             android:name=".predefined.pregnancy.PregnancyActivity"
             android:exported="false" />
         <activity
-            android:name=".predefined.RabiesActivity"
+            android:name=".predefined.rabies.RabiesActivity"
             android:exported="false" />
         <activity
             android:name=".predefined.pregnancy.DateConverterActivity"

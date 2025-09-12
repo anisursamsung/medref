@@ -13,20 +13,19 @@ import androidx.appcompat.widget.AppCompatImageView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.anis.android.medref.R;
-import com.anis.android.medref.bookviewer.BookViewerActivity;
 import com.anis.android.medref.predefined.pregnancy.PregnancyActivity;
-import com.anis.android.medref.predefined.RabiesActivity;
-import com.anis.android.medref.predefined.textimagemodel.ModelActivity;
-import com.anis.android.medref.custom.NoteEditorActivity;
+import com.anis.android.medref.predefined.rabies.RabiesActivity;
+import com.anis.android.medref.predefined.model.ModelActivity;
+import com.anis.android.medref.user.NoteEditorActivity;
 import com.google.android.material.textview.MaterialTextView;
 
 import java.util.List;
 
-public class ReferenceAdapter extends RecyclerView.Adapter<ReferenceAdapter.ViewHolder> {
+public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     private Context context;
-    private List<ReferenceItem> itemList;
+    private List<ListItem> itemList;
 
-    public ReferenceAdapter(Context context, List<ReferenceItem> itemList) {
+    public ListAdapter(Context context, List<ListItem> itemList) {
         this.context = context;
         this.itemList = itemList;
     }
@@ -34,13 +33,13 @@ public class ReferenceAdapter extends RecyclerView.Adapter<ReferenceAdapter.View
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_new_reference, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_quick_topics, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        ReferenceItem item = itemList.get(position);
+        ListItem item = itemList.get(position);
         holder.label.setText(item.getLabel());
         holder.description.setText(item.getDescription());
         holder.icon.setImageResource(item.getIconResId());
@@ -76,7 +75,7 @@ public class ReferenceAdapter extends RecyclerView.Adapter<ReferenceAdapter.View
         });
     }
 
-    private void showDeleteDialog(ReferenceItem item, int position) {
+    private void showDeleteDialog(ListItem item, int position) {
         new AlertDialog.Builder(context)
                 .setTitle("Delete Note")
                 .setMessage("Are you sure you want to delete this note?")

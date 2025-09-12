@@ -4,8 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
-import com.anis.android.medref.main.fragments.quickref.QuickRefFragment;
-import com.anis.android.medref.main.fragments.subjects.SubjectsFragment;
+import com.anis.android.medref.main.fragments.quickref.QuickTopicsFragment;
+import com.anis.android.medref.main.fragments.tools.ToolsFragment;
+
 public class MainPagerAdapter extends FragmentStateAdapter {
 
     private final Fragment[] fragments;
@@ -13,8 +14,8 @@ public class MainPagerAdapter extends FragmentStateAdapter {
     public MainPagerAdapter(@NonNull FragmentActivity fragmentActivity) {
         super(fragmentActivity);
         fragments = new Fragment[] {
-                new QuickRefFragment(),
-                new SubjectsFragment()
+                new ToolsFragment(),
+                new QuickTopicsFragment()
         };
     }
 

@@ -5,6 +5,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.anis.android.medref.R;
 import com.google.android.material.appbar.MaterialToolbar;
@@ -31,7 +32,6 @@ public class LMPFinderActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        TextInputLayout tilGestAge = findViewById(R.id.til_gestational_age);
         TextInputEditText etGestationalAge = findViewById(R.id.et_gestational_age);
         DatePicker datePicker = findViewById(R.id.date_picker);
         Button btnCalculate = findViewById(R.id.btn_calculate_lmp);
@@ -41,10 +41,8 @@ public class LMPFinderActivity extends AppCompatActivity {
         btnCalculate.setOnClickListener(v -> {
             String gaInput = etGestationalAge.getText() != null ? etGestationalAge.getText().toString().trim() : "";
             if (gaInput.isEmpty()) {
-                tilGestAge.setError("Enter GA in weeks");
+                Toast.makeText(this, "Enter GA in weeks",Toast.LENGTH_SHORT).show();
                 return;
-            } else {
-                tilGestAge.setError(null);
             }
 
             int gaWeeks = Integer.parseInt(gaInput);
@@ -64,7 +62,7 @@ public class LMPFinderActivity extends AppCompatActivity {
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
             String lmpDate = sdf.format(examDate.getTime());
 
-            tvResult.setText("LMP: " + lmpDate);
+            tvResult.setText(lmpDate);
         });
     }
     @Override

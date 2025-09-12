@@ -1,15 +1,12 @@
-package com.anis.android.medref.predefined.textimagemodel;
+package com.anis.android.medref.predefined.model;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.anis.android.medref.R;
-import com.github.chrisbanes.photoview.PhotoView;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.textview.MaterialTextView;
 
@@ -20,6 +17,8 @@ import java.util.Objects;
 import java.util.Scanner;
 
 import io.noties.markwon.Markwon;
+import io.noties.markwon.ext.tables.TablePlugin;
+import io.noties.markwon.html.HtmlPlugin;
 import io.noties.markwon.image.picasso.PicassoImagesPlugin;
 
 public class ModelActivity extends AppCompatActivity {
@@ -75,6 +74,8 @@ public class ModelActivity extends AppCompatActivity {
         String textToSet = loadMarkdownFromAssets(filename);
         Markwon markwon = Markwon.builder(this)
                 .usePlugin(PicassoImagesPlugin.create(this))
+                .usePlugin(TablePlugin.create(this))
+                .usePlugin(HtmlPlugin.create())
                 .build();
         markwon.setMarkdown(textView, textToSet);
     }

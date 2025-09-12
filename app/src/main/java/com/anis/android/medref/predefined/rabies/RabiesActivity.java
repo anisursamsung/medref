@@ -1,4 +1,4 @@
-package com.anis.android.medref.predefined;
+package com.anis.android.medref.predefined.rabies;
 
 import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
@@ -14,7 +14,6 @@ import androidx.appcompat.widget.AppCompatSpinner;
 import com.anis.android.medref.R;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.button.MaterialButton;
-import com.google.android.material.color.DynamicColors;
 import com.google.android.material.textview.MaterialTextView;
 
 import java.util.Calendar;

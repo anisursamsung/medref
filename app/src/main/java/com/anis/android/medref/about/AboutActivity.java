@@ -1,4 +1,4 @@
-package com.anis.android.medref;
+package com.anis.android.medref.about;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -6,6 +6,7 @@ import android.view.MenuItem;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.anis.android.medref.R;
 import com.google.android.material.appbar.MaterialToolbar;
 
 public class AboutActivity extends AppCompatActivity {

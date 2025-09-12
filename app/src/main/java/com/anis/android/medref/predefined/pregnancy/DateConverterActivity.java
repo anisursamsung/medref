@@ -5,8 +5,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.NumberPicker;
-import android.widget.Spinner;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -51,8 +49,8 @@ public class DateConverterActivity extends AppCompatActivity {
         dayPicker = findViewById(R.id.numberPickerDay);
         monthPicker = findViewById(R.id.numberPickerMonth);
         yearPicker = findViewById(R.id.numberPickerYear);
-        buttonConvert = findViewById(R.id.buttonConvertToEnglish);
-        textViewResult = findViewById(R.id.textViewEnglishDate);
+        buttonConvert = findViewById(R.id.buttonConvert);
+        textViewResult = findViewById(R.id.textViewOutput);
 
         // Setup Spinner
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, conversionTypes);
@@ -63,7 +61,7 @@ public class DateConverterActivity extends AppCompatActivity {
             @Override public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 isBanglaToGregorian = (position == 0);
                 updatePickersBasedOnMode();
-                textViewResult.setText(""); // clear previous result
+                textViewResult.setText("01/01/1900"); // clear previous result
             }
 
             @Override public void onNothingSelected(AdapterView<?> parent) {}
@@ -73,18 +71,23 @@ public class DateConverterActivity extends AppCompatActivity {
         updatePickersBasedOnMode();
 
         buttonConvert.setOnClickListener(v -> {
-            int day = dayPicker.getValue();
-            int month = monthPicker.getValue();
-            int year = yearPicker.getValue();
-
-            if (isBanglaToGregorian) {
-                String result = banglaToGregorian(day, month, year);
-                textViewResult.setText(result);
-            } else {
-                String result = converter.convertToBangla(day, month, year);
-                textViewResult.setText(result);
-            }
+            convert();
         });
+    }
+
+    private void convert() {
+
+        int day = dayPicker.getValue();
+        int month = monthPicker.getValue();
+        int year = yearPicker.getValue();
+
+        if (isBanglaToGregorian) {
+            String result = banglaToGregorian(day, month, year);
+            textViewResult.setText(result);
+        } else {
+            String result = converter.convertToBangla(day, month, year);
+            textViewResult.setText(result);
+        }
     }
 
     private void updatePickersBasedOnMode() {

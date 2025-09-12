@@ -1,6 +1,6 @@
 package com.anis.android.medref.main.fragments.quickref;
 
-public class ReferenceItem {
+public class ListItem {
     private String label;
     private String description;
     private boolean isPredef;
@@ -14,7 +14,7 @@ public class ReferenceItem {
 
     private int iconResId;
 
-    public ReferenceItem(String label, String description, boolean isPredef, boolean isModel, boolean isUser, String key, int iconResId) {
+    public ListItem(String label, String description, boolean isPredef, boolean isModel, boolean isUser, String key, int iconResId) {
         this.label = label;
         this.description= description;
         this.isPredef = isPredef;

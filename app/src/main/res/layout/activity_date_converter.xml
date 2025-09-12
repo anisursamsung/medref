@@ -1,102 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".predefined.rabies.RabiesActivity">
 
-    <!-- Toolbar -->
+    <!-- Top Toolbar -->
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
+        app:titleCentered="true"
+        android:layout_alignParentTop="true"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        app:title="Converter"
-        app:titleCentered="true" />
+        android:layout_height="wrap_content"
+        app:title="Converter" />
 
-    <!-- Content -->
-    <ScrollView
+    <!-- Scrollable content zone -->
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textViewOutput"
+        android:padding="10dp"
+        android:textAppearance="@style/TextAppearance.Material3.DisplaySmall"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/toolbar"
+        android:layout_height="wrap_content"
+        android:text="01/01/1900"
+        android:layout_width="wrap_content" />
+
+    <!-- Calculation zone at the bottom -->
+    <LinearLayout
+        android:id="@+id/rabies_calculation_zone"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingHorizontal="20dp"
-        android:paddingTop="16dp"
-        android:paddingBottom="32dp">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        android:elevation="5dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/rabies_calculation_bg"
+        android:padding="20dp">
 
+        <com.google.android.material.textview.MaterialTextView
+            id="@+id/select_vaccination_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Conversion type:"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/conversionTypeSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="40dp"
+            android:layout_marginBottom="16dp" />
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pick date:"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center_horizontal">
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="28dp">
 
-            <!-- Conversion Type Dropdown -->
-            <androidx.appcompat.widget.AppCompatSpinner
-                android:id="@+id/conversionTypeSpinner"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp" />
-
-            <!-- Date Pickers Row -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_marginBottom="28dp">
-
-                <NumberPicker
-                    android:id="@+id/numberPickerDay"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginEnd="12dp" />
-
-                <NumberPicker
-                    android:id="@+id/numberPickerMonth"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginEnd="12dp" />
-
-                <NumberPicker
-                    android:id="@+id/numberPickerYear"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-            </LinearLayout>
-
-            <!-- Output -->
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/textViewEnglishDate"
+            <NumberPicker
+                android:id="@+id/numberPickerDay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                android:gravity="center"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                android:hint="Output" />
+                android:layout_marginEnd="12dp" />
 
-            <com.google.android.material.textview.MaterialTextView
+            <NumberPicker
+                android:id="@+id/numberPickerMonth"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textSize="14sp"
-                android:layout_marginBottom="28dp"
-                android:hint="@string/calendar_disc"
-                android:textStyle="italic" />
+                android:layout_marginEnd="12dp" />
 
-            <!-- Convert Button -->
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/buttonConvertToEnglish"
+            <NumberPicker
+                android:id="@+id/numberPickerYear"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Convert"
-                android:textStyle="bold"
-                android:textSize="16sp"
-                android:paddingHorizontal="32dp"
-                android:paddingVertical="12dp"
-                app:cornerRadius="24dp"
-                android:layout_gravity="center" />
-
+                />
         </LinearLayout>
-    </ScrollView>
-</LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonConvert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Convert"
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"/>
+    </LinearLayout>
+
+</RelativeLayout>
+

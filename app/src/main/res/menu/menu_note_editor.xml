@@ -16,7 +16,7 @@
         app:showAsAction="never"/>
     <item
         android:id="@+id/action_edit"
-        android:icon="@drawable/edit"
+        android:icon="@drawable/ic_edit"
         app:showAsAction="ifRoom"
         android:title="Edit" />
 
